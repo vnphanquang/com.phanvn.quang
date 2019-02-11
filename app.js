@@ -23,8 +23,11 @@ const upload = multer();
 const nodemailer = require('nodemailer');
 
 //---------------------- Routing ----------------------
-app.get('/', function(req, res) {
-   console.log(`request index!`);
+app.get('/quang/*', (req, res) => {
+   res.redirect('/quang');
+});
+
+app.get('/quang', (req, res) => {
    res.render('index');
 });
 
@@ -70,9 +73,11 @@ app.post('/contact', upload.none(), (req, res) => {
    });
 
 });
+app.get(['/favicon.ico', '/quang/favicon.ico'], (req, res) => {});
 
 app.get('*', (req, res) => {
-   res.send('Page not found'); 
+   console.log(`Unhandled Request from ${req.originalUrl}`);
+   res.send(); 
 });
 
 //---------------------- Server Initiation ----------------------
