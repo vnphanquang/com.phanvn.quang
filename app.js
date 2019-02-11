@@ -77,9 +77,13 @@ app.get('*', (req, res) => {
 //---------------------- Server Initiation ----------------------
 
 //local host server
-require('http');
-const hostname = '127.0.0.1';
-const port = 3000;
-app.listen(port, hostname, () => {
-   console.log('Server running at http://${hostname}:${port}/ ...');
+// require('http');
+// const hostname = '127.0.0.1';
+// const port = 3000;
+// app.listen(port, hostname, () => {
+//    console.log('Server running at http://${hostname}:${port}/ ...');
+// });
+
+app.listen(3000, () => {
+   console.log(console.log("Listening on port 3000"));
 });
