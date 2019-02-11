@@ -1,0 +1,19 @@
+# Eclipse IDE
+/.project
+.settings/
+
+# Ohter Projects and Miscellaneous
+gitignore/
+
+# VS Code IDE
+.vscode
+.vs
+
+# Node
+node_modules/
+
+# ENVIRONMENT_VARIABLES
+.env
+
+# Contact Request Failure Log
+contact-failure-log.txt

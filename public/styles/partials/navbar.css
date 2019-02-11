@@ -1,0 +1,359 @@
+@font-face {
+	font-family: "Monoton";
+	src: url("/fonts/Monoton-Regular.ttf");
+}
+/* ----------------------------------------------------------- */
+/* Navbar Configuration*/
+nav {
+   position: fixed;
+	left: 0;
+	right: 0;
+	z-index: 100;
+	height: 50px;
+	padding-top: 5px;
+	-webkit-transition: background-color 500ms;
+	transition: background-color 500ms;
+
+	top: -55px;
+	opacity: 0;
+	-webkit-animation: slide-down 500ms ease 100ms forwards;
+	        animation: slide-down 500ms ease 100ms forwards;
+}
+
+#nav-main {
+	height: 100%;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	position: relative;
+	bottom: -40px;
+	opacity: 0;
+	visibility: hidden;
+	-webkit-transition: bottom 300ms ease-out, opacity 300ms ease-out, visibility 300ms;
+	transition: bottom 300ms ease-out, opacity 300ms ease-out, visibility 300ms;
+}
+#nav-main.navShowed {
+	bottom: 0;
+	opacity: 1;
+	visibility: visible;
+	-webkit-transition: bottom 300ms ease-in, opacity 300ms ease-in, visibility 300ms;
+	transition: bottom 300ms ease-in, opacity 300ms ease-in, visibility 300ms;
+}
+
+.navScrolled {
+	background-color:rgba(33, 33, 33, 0.75);
+}
+
+#nav-quangphan>a {
+	width: 65px;
+	position: absolute;
+	top: 10px;
+	left: 50%;
+	margin-left: -32.5px;
+	z-index: 101;
+	visibility: hidden;
+	opacity: 0;
+	-webkit-transition: opacity 300ms ease-out, visibility 300ms;
+	transition: opacity 300ms ease-out, visibility 300ms;
+}
+#nav-quangphan>a:active {
+	transform-origin: center;
+	transform: scale(.95);
+}
+#nav-quangphan img {
+	width: 100%;
+	height: auto;
+}
+nav.navScrolled>#nav-quangphan>a {
+	visibility: visible;
+	opacity: 1;
+	-webkit-transition: opacity 300ms ease-in 100ms, visibility 400ms;
+	transition: opacity 300ms ease-in 100ms, visibility 400ms;
+}
+
+#nav-quangphan>p {
+	font-family: "Monoton", monospace;
+	color: red;
+	font-size: 30px;
+	text-transform: uppercase;
+	position: absolute;
+	z-index: 101;
+	margin: 0;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+}
+
+#nav-quangphan>p>span {
+	position: relative;
+	text-shadow: 0 0 100px red,0 0 40px FireBrick,0 0 8px DarkRed;
+	opacity: .55;
+}
+
+#nav-quangphan>p>span:first-child{
+	left: 0;
+	-webkit-transition: left 300ms ease-out 100ms, opacity 300ms ease-out 100ms;
+	transition: left 300ms ease-out 100ms, opacity 300ms ease-out 100ms;
+}
+
+#nav-quangphan>p>span:last-child{
+	right: 0;
+	-webkit-transition: right 300ms ease-out 100ms, opacity 300ms ease-out 100ms;
+	transition: right 300ms ease-out 100ms, opacity 300ms ease-out 100ms;
+}
+
+
+nav.navScrolled>#nav-quangphan>p>span:first-child{
+	left: -55px;
+	opacity: .65;
+	visibility: visible;
+	-webkit-transition: left 300ms ease-in, visibility 300ms;
+	transition: left 300ms ease-in, visibility 300ms;
+}
+nav.navScrolled>#nav-quangphan>p>span:last-child {
+	right: -25px;
+	opacity: .65;
+	visibility: visible;
+	-webkit-transition: right 300ms ease-in, visibility 300ms;
+	transition: right 300ms ease-in, visibility 300ms;
+}
+
+
+#nav-quangphan .led-off {
+	text-shadow: none;
+	opacity: .5;
+}
+
+#nav-quangphan>p>span:first-child>.led-flicker:first-child {
+	-webkit-animation: flicker-one 6s linear infinite;
+	        animation: flicker-one 6s linear infinite;
+}
+#nav-quangphan>p>span:first-child>.led-flicker:last-child {
+	-webkit-animation: flicker-one 10s linear infinite;
+	        animation: flicker-one 10s linear infinite;
+}
+
+#nav-quangphan>p>span:last-child>.led-flicker {
+	-webkit-animation: flicker-two 8s linear infinite;
+	        animation: flicker-two 8s linear infinite;
+}
+
+#nav-quangphan>p:hover *{
+	-webkit-animation: none !important;
+	        animation: none !important;
+	text-shadow: 0 0 100px #ffffff,0 0 40px #33ff33,0 0 3px #ffff4d;
+	opacity: .75;
+	cursor: default;
+}
+
+#nav-ham {
+	height: 40px;
+	display: none;
+	opacity: .75;
+	padding-left: 5px;
+}
+
+#collapse-check {
+	display: none;
+}
+
+#nav-ham:hover {
+	opacity: 1;
+	cursor: pointer;
+}
+
+#nav-main>div>a {
+	padding: 0 10px;
+}
+
+#nav-links {
+	margin-left: 5px;
+	margin-right: auto;
+}
+
+.nav-link {
+	font-family: "QuangPhan", Arial;
+	font-size: 22px;
+	text-decoration: none;
+	color: white;
+	opacity: .75;
+}
+
+#nav-socials {
+	margin-right: 5px;
+	margin-left: auto;
+}
+
+.nav-social {
+	text-align: center;
+	vertical-align: middle;
+	opacity: .75;
+}
+
+.nav-social>img {
+	width: 35px;
+}
+
+.nav-link:hover, .nav-social:hover {
+	opacity: 1;
+}
+/* ----------------------- Media Queries ----------------------- */
+@media only screen and (max-width: 1200px) and (min-width: 675px), (max-width: 550px) {
+	#nav-quangphan>p { display: none};	
+}
+
+@media only screen and (max-width: 840px) and (min-width: 675px) {
+	#nav-links {
+		display: table;
+		width: 50%;
+		border-spacing: 0 5px;
+		padding-left: 5px;
+		margin: 0;
+		border-radius: 0 0 5% 5%;
+		position: absolute;
+		left: 0;
+		top: 50px;
+		background: -webkit-gradient(linear, left top, left bottom, from(rgba(33, 33, 33, .75)),
+			to(rgba(33, 33, 33, 1)));
+		background: linear-gradient(to bottom, rgba(33, 33, 33, .75),
+			rgba(33, 33, 33, 1));
+		-webkit-transform-origin: top;
+		        transform-origin: top;
+		-webkit-transform: scaleY(0);
+		        transform: scaleY(0);
+		-webkit-transition: -webkit-transform 200ms ease-out;
+		transition: -webkit-transform 200ms ease-out;
+		transition: transform 200ms ease-out;
+		transition: transform 200ms ease-out, -webkit-transform 200ms ease-out;
+	}
+	.nav-link {
+		display: table-row;
+		text-align: start;
+	}
+	#nav-ham {
+		display: inline-block;
+	}
+	#collapse-check:checked ~#nav-links {
+		-webkit-transform: scaleY(1);
+		        transform: scaleY(1);
+		-webkit-transition: -webkit-transform 200ms ease-in;
+		transition: -webkit-transform 200ms ease-in;
+		transition: transform 200ms ease-in;
+		transition: transform 200ms ease-in, -webkit-transform 200ms ease-in;
+	}
+}
+
+@media only screen and (max-width: 675px) {
+	#nav-main {
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
+		-webkit-box-align: start;
+		    -ms-flex-align: start;
+		        align-items: flex-start;
+	}
+	#nav-links, #nav-socials {
+		width: 100%;
+		height: 100%;
+		margin-left: 0;
+		margin-right: auto;
+		background-color: rgba(33, 33, 33, 0.75);
+	}
+	#nav-links {
+		margin-top: 5px;
+		padding-top: 20px;
+		-webkit-transform-origin: top;
+		        transform-origin: top;
+		-webkit-transform: scaleY(0);
+		        transform: scaleY(0);
+		-webkit-transition: -webkit-transform 100ms 75ms linear;
+		transition: -webkit-transform 100ms 75ms linear;
+		transition: transform 100ms 75ms linear;
+		transition: transform 100ms 75ms linear, -webkit-transform 100ms 75ms linear;
+	}
+	#nav-socials {
+		padding-top: 10px;
+		-webkit-transform-origin: top;
+		        transform-origin: top;
+		-webkit-transform: scaleY(0);
+		        transform: scaleY(0);
+		-webkit-transition: -webkit-transform 100ms ease-out;
+		transition: -webkit-transform 100ms ease-out;
+		transition: transform 100ms ease-out;
+		transition: transform 100ms ease-out, -webkit-transform 100ms ease-out;
+	}
+	#nav-ham {
+		display: inline-block;
+	}
+	#collapse-check:checked ~#nav-links {
+		-webkit-transform: scaleY(1);
+		        transform: scaleY(1);
+		-webkit-transition: -webkit-transform 100ms ease-in;
+		transition: -webkit-transform 100ms ease-in;
+		transition: transform 100ms ease-in;
+		transition: transform 100ms ease-in, -webkit-transform 100ms ease-in;
+	}
+	#collapse-check:checked ~#nav-socials {
+		-webkit-transform: scaleY(1);
+		        transform: scaleY(1);
+		-webkit-transition: -webkit-transform 100ms 75ms linear;
+		transition: -webkit-transform 100ms 75ms linear;
+		transition: transform 100ms 75ms linear;
+		transition: transform 100ms 75ms linear, -webkit-transform 100ms 75ms linear;
+	}
+}
+/* ---------------------- Keyframes ---------------------- */
+@-webkit-keyframes slide-down{
+	100% {
+		top: 0;
+		opacity: 1;
+	}
+}
+@keyframes slide-down{
+	100% {
+		top: 0;
+		opacity: 1;
+	}
+}
+/* -------------------------------------------- */
+@-webkit-keyframes flicker-one {
+	0%,19.999%,22%,62.999%,64%, 64.999%,70%,100% {
+	  opacity:.99; text-shadow: 0 0 80px red,0 0 30px FireBrick,0 0 6px DarkRed;
+	}
+	20%,21.999%,63%,63.999%,65%,69.999% {
+	  opacity:0.4; text-shadow: none; 
+	}
+ }
+@keyframes flicker-one {
+	0%,19.999%,22%,62.999%,64%, 64.999%,70%,100% {
+	  opacity:.99; text-shadow: 0 0 80px red,0 0 30px FireBrick,0 0 6px DarkRed;
+	}
+	20%,21.999%,63%,63.999%,65%,69.999% {
+	  opacity:0.4; text-shadow: none; 
+	}
+ }
+ /* -------------------------------------------- */
+ @-webkit-keyframes flicker-two {
+	0%,12%,18.999%,23%,31.999%,37%,44.999%,46%,49.999%,51%,58.999%,61%,68.999%,71%,85.999%,96%,100% {
+	  opacity:0.99; text-shadow: 0 0 80px red,0 0 30px FireBrick,0 0 6px DarkRed;
+	}
+	19%,22.99%,32%,36.999%,45%,45.999%,50%,50.99%,59%,60.999%,69%,70.999%,86%,95.999% { 
+	  opacity:0.4; text-shadow: none; 
+	}
+ }
+ @keyframes flicker-two {
+	0%,12%,18.999%,23%,31.999%,37%,44.999%,46%,49.999%,51%,58.999%,61%,68.999%,71%,85.999%,96%,100% {
+	  opacity:0.99; text-shadow: 0 0 80px red,0 0 30px FireBrick,0 0 6px DarkRed;
+	}
+	19%,22.99%,32%,36.999%,45%,45.999%,50%,50.99%,59%,60.999%,69%,70.999%,86%,95.999% { 
+	  opacity:0.4; text-shadow: none; 
+	}
+ }

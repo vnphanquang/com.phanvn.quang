@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+
+	<title>Quang Phan</title>
+
+	<link rel="stylesheet" type="text/css" href="/styles/index.css">
+
+	<script type="text/javascript" src="/scripts/lib/pq-typewriter.js"></script>
+	<script type="text/javascript" src="/scripts/index.js" defer></script>
+
+</head>
+
+<body>
+	<% include partials/nav %>
+
+	<header>
+		<img src="../images/portrait-hero-stupid.png" alt="portrait-hero">
+		<a href="#scrollTo">
+			<svg id="mouse-svg" class="hover-scale" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 76 130" preserveAspectRatio="xMidYMid meet">
+				<rect width="70" height="118" x="1.5" y="1.5" stroke="#FFFF" stroke-width="3" rx="36"/>
+				<circle cx="36.5" cy="31.5" r="4.5" fill="#FFFF"/>
+			</svg>
+		</a>
+		<div id="pq-hero-container"><p><span id="pq-hero"><!--t, 300ms, 1s-->web<!--d, all, 300ms, 500ms--><!--t, 500ms, 500ms-->software<!--d, all, 500ms, 500ms--><!--t, 800ms, 500ms-->tea-drinking<!--d, all, 800ms, 500ms--><!--t, 800ms, 500ms-->bug-making<!--d, all, 800ms, 500ms--><!--l, infinite--><span class="pq-cursor"></span></span> developer;</p></div>
+		<div id="header-socials">
+				<a class="hover-scale" href="https://www.linkedin.com/in/vnphanquang" target="_blank"><img src="/images/socials/social-icon-linkedin.png" alt="linkedin"></a>
+				<a class="hover-scale" href="https://github.com/vnphanquang" target="_blank"><img src="/images/socials/social-icon-github.png" alt="github"></a>
+				<a class="hover-scale" href="https://www.facebook.com/vnphanquang" target="_blank"><img src="/images/socials/social-icon-facebook.png" alt="facebook"></a>
+				<a class="hover-scale" href="https://www.flickr.com/photos/134663221@N06" target="_blank"><img src="/images/socials/social-icon-flickr.png" alt="flickr"></a>
+		</div>
+	</header>
+
+	<main id="scrollTo">
+
+		<section class="carousel projects">
+			<div class="carousel-btns">
+				<img class="hover-scale project-active" src="/images/projects/pq-btn.svg" alt="pq">
+				<img class="hover-scale" src="/images/projects/multiclip-btn.svg" alt="multiclip">
+				<img class="hover-scale" src="/images/projects/crossword-btn.svg" alt="crossword">
+			</div>
+			<div class="slide-container">
+
+				<div class="slide pq">
+					<div class="slide-left pq">
+						<p class="slide-title pq"><!--t, 2s, 1s--><strong>TYPING WEB ANIMATION</strong><!--d, all, 1s, 500ms--><!--t, 2s, 200ms-->PARAMETERIZED IN <span>HTML</span><!--d, all, 1s, 500ms--><!--t, 1.5s, 200ms-->STYLED WITH <span>CSS</span><!--d, all, 1s, 500ms--><!--t, 2s, 200ms-->INITIATED IN <span>Javascript</span><!--d, all, 0.75s, 500ms--><!--l, infinite--><span class="pq-cursor"></span></p>
+						<div class="slide-content pq">
+							<p><img src="/images/projects/pq-features.svg" alt="pq-features">
+								Looking for a solution to your typing web animation? 
+								I happened to over-👨‍🔬-engineer a JS library just for that. 
+								It ensures separation of concerns and 
+								allows you to style your text freely without affecting the animation. 
+								Let me know if you think it rules 👍(or sucks 👎).
+							</p>
+						</div>
+						<a class="slide-more pq active-scale" href="https://github.com/vnphanquang/pq-typewriterjs" target="_blank">
+							SOURCE CODE & DOCUMENTATION
+						</a>
+					</div>
+
+					<div class="slide-right slide-image pq">
+						<a class="active-scale" href="https://codepen.io/vnphanquang/pen/dwxjJE" target="_blank">
+							<img src="/images/projects/pq-demo.svg" alt="pq-demo">
+							<p>See Demo</p>
+						</a>
+					</div>
+				</div>
+
+				<div class="slide multiclip">
+					<div class="slide-left multiclip">
+							<p class="slide-title multiclip">MULTICLIP</p>
+							<div class="slide-content multiclip">
+								<p>
+									Written with <a href="https://www.autoitscript.com/site/" target="_blank">AutoIt</a>. 
+									Run in Windows. For productivity geeks. 
+									An application that gives you five virtual clipboards for instant copy/paste
+									with built-in hotkeys, minimalized graphical user interface, and customizable 
+									modes for switching and circling between clips. 
+									Multiclip does not interfere with Windows default clipboard. 
+								</p>
+							</div>
+							<a class="slide-more multiclip active-scale" href="https://github.com/vnphanquang/MultiClip_AutoIt/raw/master/MultiClip-ver1.1.rar">
+								DOWNLOAD PORTABLE
+							</a>
+					</div>
+					<div class="slide-right slide-image multiclip">
+						<a href="https://github.com/vnphanquang/MultiClip_AutoIt" class="active-scale" target="_blank">
+							<img src="/images/projects/multiclip-demo.png" alt="multiclip-demo">
+							<p>See Source</p>
+						</a>
+					</div>
+				</div>
+
+				<div class="slide crossword">
+					<div class="slide-left crossword">
+						<p class="slide-title crossword">CROSSWORD EDITOR (PROTOTYPE)</p>
+						<div class="slide-content crossword">
+							<p>
+								This is an ongoing project to build a Crossword editor. It aims
+								to support crossword makers with tools for effiency and to-be-implemented 
+								features such as autogeneration and word-searching. A working 
+								prototype was sucessfully built in JavaFX. Do let me know if you find this
+								interesting.
+							</p>
+						</div>
+						<a class="slide-more" href="https://github.com/vnphanquang/farius.crossword" target="_blank">
+							GITHUB
+						</a>
+					</div>
+
+					<div class="slide-right slide-image crossword">
+						<a href="https://github.com/vnphanquang/MultiClip_AutoIt" class="active-scale" target="_blank">
+							<img src="/images/projects/crossword-demo.png" alt="crossword-demo">
+						</a>
+					</div>
+				</div>
+
+			</div>
+		</section>
+	
+		<section id="geolocations">
+				<img src="/images/geolocations.gif" alt="geolocation">
+		</section>
+
+		<section id="contact">
+			<h1>GET IN TOUCH</h1>
+			
+			<figure id="mail-truck">
+				<div class="hover-scale">
+					<img src="/images/truck.svg" width="40px" height="40px" alt="mail-truck">
+					<div id="truck-shadow"></div>
+				</div>
+			</figure>
+
+			<figure id="contact-again">
+				<div class="swing">
+					<p>Looking forward to your mail. Click to send another!</p>
+				</div>
+			</figure>
+			
+			<% include partials/animated-mail.ejs %>
+			
+			<form action="/contact" id="contact-form" method="post" role="form" enctype="multipart/form-data">
+				<div id="step-dots">
+					<span class="step-dot active"></span>
+					<span class="step-dot"></span>
+					<span class="step-dot"></span>
+				</div>
+
+				<div id="form-tabs">
+					<div class="form-tab name">
+						<label for="name">Name: </label>
+						<input id="name" name="name" type="text" placeholder="Your name (not required)...">
+					</div>
+		
+					<div class="form-tab email">
+						<label for="email">Email: </label>
+						<input id="email" name="email" type="text" placeholder="Your email (not required)..."
+						pattern=".+@.+\..+" >
+					</div>
+	
+					<div class="form-tab message">
+						<label for="message">Message&#42;:</label>
+						<textarea id="message" name="message" placeholder="Tell me your thoughts (required)..." rows="3" required="required"></textarea>
+					</div>
+				</div>
+
+				<div id="form-btns">
+					<button class="form-previous hover-scale" type="button">Previous</button>
+					<button class="form-next hover-scale" type="button">Next</button>
+					<button class="form-submit hover-scale" type="submit">Submit</button>
+				</div>
+			</form>
+
+		</section>
+
+	</main>
+
+	<% include partials/footer %>
+
+</body>
+
+</html>
