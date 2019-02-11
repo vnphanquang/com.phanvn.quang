@@ -5,6 +5,8 @@ require('dotenv').config()
 //file system API
 const fs = require('fs');
 
+//express subdomain
+const subdomain = require('express-subdomain');
 //express & static directory
 const express = require('express');
 const app = express();
@@ -22,16 +24,15 @@ const upload = multer();
 //NodeMailer
 const nodemailer = require('nodemailer');
 
-//---------------------- Routing ----------------------
-app.get('/quang/*', (req, res) => {
-   res.redirect('/quang');
-});
-
-app.get('/quang', (req, res) => {
+//---------------------- Quang Subdomain ----------------------
+const quangRouter = express.Router();
+ 
+//api specific routes
+quangRouter.get('/', function(req, res) {
    res.render('index');
 });
-
-app.post('/contact', upload.none(), (req, res) => {
+ 
+quangRouter.post('/contact', upload.none(), (req, res) => {
 
    let mailOpts, smtpTrans;
    smtpTrans = nodemailer.createTransport({
@@ -73,13 +74,19 @@ app.post('/contact', upload.none(), (req, res) => {
    });
 
 });
+//---------------------- Routing ----------------------
+app.use(subdomain('quang', router));
+
 app.get(['/favicon.ico', '/quang/favicon.ico'], (req, res) => {});
 
 app.get('*', (req, res) => {
-   console.log(`Unhandled Request from ${req.originalUrl}`);
-   res.send(); 
+   res.redirect('http://quang.phanvn.com');
 });
 
+// app.get('*', (req, res) => {
+//    console.log(`Unhandled Request from ${req.originalUrl}`);
+//    res.send(); 
+// });
 //---------------------- Server Initiation ----------------------
 const http = require('http');
 const hostname = '127.0.0.1';
