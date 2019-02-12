@@ -64,8 +64,10 @@ nav {
 	transition: opacity 300ms ease-out, visibility 300ms;
 }
 #nav-quangphan>a:active {
-	transform-origin: center;
-	transform: scale(.95);
+	-webkit-transform-origin: center;
+	        transform-origin: center;
+	-webkit-transform: scale(.95);
+	        transform: scale(.95);
 }
 #nav-quangphan img {
 	width: 100%;
