@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded', function(e) {
 			}
 		};
 	
-		xhr.open('POST', '/contact', true);
+		xhr.open('POST', '/quang/contact', true);
 		xhr.send(new FormData(contactForm));
 	}
 	

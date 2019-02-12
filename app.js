@@ -5,13 +5,16 @@ require('dotenv').config()
 //file system API
 const fs = require('fs');
 
-//express subdomain
-const subdomain = require('express-subdomain');
 //express & static directory
 const express = require('express');
 const app = express();
-app.use(express.static('public'));
+const path = require('path');
+app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
+
+//express subdomain
+// const subdomain = require('express-subdomain');
+// app.use(subdomain('quang', express.static('quang/public')));
 
 //parsing application/x-www-form-urlencoded
 const bodyParser = require('body-parser');
@@ -25,14 +28,20 @@ const upload = multer();
 const nodemailer = require('nodemailer');
 
 //---------------------- Quang Subdomain ----------------------
-const quangRouter = express.Router();
- 
-//api specific routes
-quangRouter.get('/', function(req, res) {
+//Index Request GET
+app.get('/quang/index.html.var', (req, res) => {
+   console.log("/ROOT REQUEST")
+   // console.log('DIR: ' + path.join(__dirname, 'public'));
+   console.log('PATH: ' +req.path);
+   // console.log('ORIGINAL URL: ' + req.originalUrl);
+   // console.log('HOST NAME: ' + req.hostname);
+   // console.log('IP: ' + req.ip);
+   // console.log('-----------------------------');
    res.render('index');
 });
- 
-quangRouter.post('/contact', upload.none(), (req, res) => {
+
+//Contact Request POST
+app.post('/quang/contact', upload.none(), (req, res) => {
 
    let mailOpts, smtpTrans;
    smtpTrans = nodemailer.createTransport({
@@ -46,9 +55,9 @@ quangRouter.post('/contact', upload.none(), (req, res) => {
    });
 
    let name = req.body.name;
-   name = (name == '') ? 'Unspecified Name' : name;
+   name = (name === '') ? 'Unspecified Name' : name;
    let email = req.body.email;
-   email = (email == '') ? 'Unspecified Email' : email;
+   email = (email === '') ? 'Unspecified Email' : email;
    let message = req.body.message;
    mailOpts = {
       from: `${name} <${email}`,
@@ -74,25 +83,31 @@ quangRouter.post('/contact', upload.none(), (req, res) => {
    });
 
 });
-//---------------------- Routing ----------------------
-app.use(subdomain('quang', router));
+ 
+//---------------------- General Routing ----------------------
 
-app.get(['/favicon.ico', '/quang/favicon.ico'], (req, res) => {});
+// app.get('/', (req, res) => {
+//    res.redirect(302, '/quang/');
+// });
 
 app.get('*', (req, res) => {
-   res.redirect('http://quang.phanvn.com');
+   console.log("*all Request");
+   console.log('DIR: ' + path.join(__dirname, 'public'));
+   console.log('PATH: ' +req.path);
+   console.log('ORIGINAL URL: ' + req.originalUrl);
+   console.log('HOST NAME: ' + req.hostname);
+   console.log('SUBDOMAINS: ' + req.subdomains);
+   // console.log(req);
+   console.log('-----------------------------');
+   res.status(200).send('testing');
 });
 
-// app.get('*', (req, res) => {
-//    console.log(`Unhandled Request from ${req.originalUrl}`);
-//    res.send(); 
-// });
 //---------------------- Server Initiation ----------------------
 const http = require('http');
 const hostname = '127.0.0.1';
 const port = 3000;
 
-// local host server
+// localhost server
 app.listen(port, hostname, () => {
    console.log(`Server running at http://${hostname}:${port}/ ...`);
 });
