@@ -111,7 +111,15 @@ document.addEventListener('DOMContentLoaded', function(e) {
 	}
 
 	async function nextContactTab() {
-		if (currentContactTab == 1) {
+		if (currentContactTab == 0) {
+			let messageInput = contactFormTabs[currentContactTab].children[1];
+			if (!messageInput.checkValidity()) {
+				messageInput.style.animation = 'none';
+				void messageInput.offsetWidth;
+				messageInput.style.animation = 'shake 500ms';
+				return;
+			}
+		} else if (currentContactTab == 1) {
 			let emailInput = contactFormTabs[currentContactTab].children[1];
 			if (!emailInput.checkValidity()) {
 				emailInput.style.animation = 'none';

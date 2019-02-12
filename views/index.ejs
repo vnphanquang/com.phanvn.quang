@@ -153,21 +153,24 @@
 				</div>
 
 				<div id="form-tabs">
-					<div class="form-tab name">
-						<label for="name">Name: </label>
-						<input id="name" name="name" type="text" placeholder="Your name (not required)...">
+
+					<div class="form-tab message">
+						<label for="message">Message&#42;:</label>
+						<textarea id="message" name="message" placeholder="Tell me your thoughts (required)..." rows="3" required="required"
+						min-length="1"></textarea>
 					</div>
-		
+
 					<div class="form-tab email">
 						<label for="email">Email: </label>
 						<input id="email" name="email" type="text" placeholder="Your email (not required)..."
 						pattern=".+@.+\..+" >
 					</div>
-	
-					<div class="form-tab message">
-						<label for="message">Message&#42;:</label>
-						<textarea id="message" name="message" placeholder="Tell me your thoughts (required)..." rows="3" required="required"></textarea>
+
+					<div class="form-tab name">
+						<label for="name">Name: </label>
+						<input id="name" name="name" type="text" placeholder="Your name (not required)...">
 					</div>
+	
 				</div>
 
 				<div id="form-btns">

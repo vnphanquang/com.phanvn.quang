@@ -486,10 +486,10 @@ header > h1 {
   margin-bottom: 5px;
   letter-spacing: 1px;
 }
-.form-tab.email>input:invalid {
+.form-tab.email>input:invalid, .form-tab.message>textarea:invalid {
   background-color: #d35050;
 }
-.form-tab.email, .form-tab.message {
+.form-tab.name, .form-tab.email {
   position: absolute;
   visibility: hidden;
 }
