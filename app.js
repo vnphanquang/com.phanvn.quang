@@ -30,13 +30,6 @@ const nodemailer = require('nodemailer');
 //---------------------- Quang Subdomain ----------------------
 //Index Request GET
 app.get('/quang/index.html.var', (req, res) => {
-   console.log("/ROOT REQUEST")
-   // console.log('DIR: ' + path.join(__dirname, 'public'));
-   console.log('PATH: ' +req.path);
-   // console.log('ORIGINAL URL: ' + req.originalUrl);
-   // console.log('HOST NAME: ' + req.hostname);
-   // console.log('IP: ' + req.ip);
-   // console.log('-----------------------------');
    res.render('index');
 });
 
@@ -90,17 +83,17 @@ app.post('/quang/contact', upload.none(), (req, res) => {
 //    res.redirect(302, '/quang/');
 // });
 
-app.get('*', (req, res) => {
-   console.log("*all Request");
-   console.log('DIR: ' + path.join(__dirname, 'public'));
-   console.log('PATH: ' +req.path);
-   console.log('ORIGINAL URL: ' + req.originalUrl);
-   console.log('HOST NAME: ' + req.hostname);
-   console.log('SUBDOMAINS: ' + req.subdomains);
-   // console.log(req);
-   console.log('-----------------------------');
-   res.status(200).send('testing');
-});
+// app.get('*', (req, res) => {
+//    console.log("*all Request");
+//    console.log('DIR: ' + path.join(__dirname, 'public'));
+//    console.log('PATH: ' +req.path);
+//    console.log('ORIGINAL URL: ' + req.originalUrl);
+//    console.log('HOST NAME: ' + req.hostname);
+//    console.log('SUBDOMAINS: ' + req.subdomains);
+//    // console.log(req);
+//    console.log('-----------------------------');
+//    res.status(200).send('testing');
+// });
 
 //---------------------- Server Initiation ----------------------
 const http = require('http');
