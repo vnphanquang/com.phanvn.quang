@@ -38,35 +38,42 @@ app.post('/quang/contact', upload.none(), (req, res) => {
 
    let mailOpts, smtpTrans;
    smtpTrans = nodemailer.createTransport({
-      host: 'smtp.gmail.com',
-      port: 465, //use SSL
-      secure: true,
+      host: 'a2plcpnl0387.prod.iad2.secureserver.net',
+      port: 465,
+      secure: true, //use SSL
       auth: {
-         user: process.env.GMAIL_USER,
-         pass: process.env.GMAIL_PASS
+         user: process.env.DOMAIN_EMAIL,
+         pass: process.env.DOMAIN_EMAIL_PASS
+      },
+      tls: {
+          rejectUnauthorized: false
       }
    });
-
    let name = req.body.name;
-   name = (name === '') ? 'Unspecified Name' : name;
+   name = (name === '') ? '<Unspecified Name>' : name;
    let email = req.body.email;
-   email = (email === '') ? 'Unspecified Email' : email;
+   email = (email === '') ? '<Unspecified Email>' : email;
    let message = req.body.message;
    mailOpts = {
-      from: `${name} <${email}`,
+      from: `Nodmailer Server <${process.env.DOMAIN_EMAIL}>`,
       to: process.env.GMAIL_USER,
-      subject: 'New message from contact form at vnphanquang',
+      subject: 'New Contact Request',
       text: `${name} (${email}) says: ${message}`
    };
    
    smtpTrans.sendMail(mailOpts, (error, response) => {
       if (error) {
+         console.log(error);
          let date = new Date();
          let toFileStr = `${date}\n${name} (${email}) says: ${message}\n${error}\n
          ----------------------------------------------------\n`;
          fs.appendFile('contact-failure-log.txt', toFileStr, (error) => {
-            if (error) console.log("Failed to update contact-failure-log.txt");
-            else console.log(`Contact form request: failure at ${date}\nUpdated contact-failure-log.txt`);
+            if (error) {
+                console.log("Failed to update contact-failure-log.txt");
+            }
+            else {
+                console.log(`Contact form request: failure at ${date}\nUpdated contact-failure-log.txt`);
+            }
          });
          res.status(200).send();
       } else {
