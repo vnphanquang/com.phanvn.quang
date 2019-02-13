@@ -85,6 +85,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
 	contactForm.addEventListener('submit', (e) => {
 		e.preventDefault();
+		contactSubmitBtn.disabled = true;
 		makeContactRequest();
 	});
 
@@ -198,8 +199,10 @@ document.addEventListener('DOMContentLoaded', (e) => {
 			if (xhr.readyState === XMLHttpRequest.DONE) {
 				if(xhr.status === 200) {
 					contactSuccess(); //success
+					contactSubmitBtn.disabled = false;
 				} else {
 					contactSuccess(); //TODO: implements failure handler?
+					contactSubmitBtn.disabled = false;
 				}
 			}
 		};
