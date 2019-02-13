@@ -1,2 +1,2 @@
 # com.phanvn.quang
-Source for https://quang.phanvn.com
+Source for https://phanvn.com/quang
