@@ -27,7 +27,6 @@ header {
   position: relative;
 }
 
-
 .active-scale:active {
   -webkit-transform-origin: center;
           transform-origin: center;
