@@ -2,6 +2,10 @@
 	font-family: "Monoton";
 	src: url("/fonts/Monoton-Regular.ttf");
 }
+@font-face {
+	font-family: "Phan Quang";
+	src: url("/fonts/PhanQuangCalligraphr-Regular.otf")
+}
 /* ----------------------------------------------------------- */
 /* Navbar Configuration*/
 nav {
@@ -181,7 +185,7 @@ nav.navScrolled>#nav-quangphan>p>span:last-child {
 }
 
 .nav-link {
-	font-family: "QuangPhan", Arial;
+	font-family: "Phan Quang", Arial;
 	font-size: 22px;
 	text-decoration: none;
 	color: white;
@@ -207,11 +211,11 @@ nav.navScrolled>#nav-quangphan>p>span:last-child {
 	opacity: 1;
 }
 /* ----------------------- Media Queries ----------------------- */
-@media only screen and (max-width: 1200px) and (min-width: 675px), (max-width: 550px) {
+@media only screen and (max-width: 1200px) and (min-width: 650px) {
 	#nav-quangphan>p { display: none};	
 }
 
-@media only screen and (max-width: 840px) and (min-width: 675px) {
+@media only screen and (max-width: 840px) and (min-width: 650px) {
 	#nav-links {
 		display: table;
 		width: 50%;
@@ -252,15 +256,13 @@ nav.navScrolled>#nav-quangphan>p>span:last-child {
 	}
 }
 
-@media only screen and (max-width: 675px) {
+@media only screen and (max-width: 649px) {
 	#nav-main {
 		-webkit-box-orient: vertical;
 		-webkit-box-direction: normal;
 		    -ms-flex-direction: column;
 		        flex-direction: column;
-		-webkit-box-align: start;
-		    -ms-flex-align: start;
-		        align-items: flex-start;
+		align-items: flex-start;
 	}
 	#nav-links, #nav-socials {
 		width: 100%;
@@ -323,6 +325,14 @@ nav.navScrolled>#nav-quangphan>p>span:last-child {
 	100% {
 		top: 0;
 		opacity: 1;
+	}
+}
+@keyframes zoom-in-out {
+	0%, 100% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.2);
 	}
 }
 /* -------------------------------------------- */

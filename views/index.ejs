@@ -8,7 +8,7 @@
 
 	<title>Quang Phan</title>
 
-	<link rel="shortcut icon" type="image/png" href="/images/favicon.png"/>
+	<link rel="shortcut icon" type="image/gif" href="/images/favicon.gif"/>
 	<link rel="stylesheet" type="text/css" href="/styles/index.css">
 
 	<script type="text/javascript" src="/scripts/lib/pq-typewriter.js"></script>
@@ -20,19 +20,29 @@
 	<% include partials/nav %>
 
 	<header>
-		<img src="../images/portrait-hero-stupid.png" alt="portrait-hero">
+		<img 	srcset="../images/portrait-hero-draw-1920w.jpg 1920w,
+						../images/portrait-hero-draw-1340w.jpg 1340w,
+						../images/portrait-hero-draw-980w.jpg 980w,
+						../images/portrait-hero-draw-650w.jpg 650w,
+						../images/portrait-hero-draw-400w.jpg 400w"
+				sizes ="(max-width: 400px) 400px,
+						(max-width: 650px) 650px,
+						(max-width: 980px) 980px,
+						(max-width: 1340px) 1340px,
+						(max-width: 1920px) 1920px"
+				src="../images/portrait-hero-draw-1920w.jpg" alt="portrait-hero">
 		<a href="#scrollTo">
 			<svg id="mouse-svg" class="hover-scale" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 76 130" preserveAspectRatio="xMidYMid meet">
 				<rect width="70" height="118" x="1.5" y="1.5" stroke="#FFFF" stroke-width="3" rx="36"/>
 				<circle cx="36.5" cy="31.5" r="4.5" fill="#FFFF"/>
 			</svg>
 		</a>
-		<div id="pq-hero-container"><p><span id="pq-hero"><!--t, 300ms, 1s-->web<!--d, all, 300ms, 500ms--><!--t, 500ms, 500ms-->software<!--d, all, 500ms, 500ms--><!--t, 800ms, 500ms-->tea-drinking<!--d, all, 800ms, 500ms--><!--t, 800ms, 500ms-->bug-making<!--d, all, 800ms, 500ms--><!--l, infinite--><span class="pq-cursor"></span></span> developer;</p></div>
+		<div id="pq-hero-container"><p><span id="pq-hero"><!--t, 300ms, 1s-->web <!--d, all, 300ms, 500ms--><!--t, 500ms, 500ms-->software <!--d, all, 500ms, 500ms--><!--t, 800ms, 500ms-->tea-drinking <!--d, all, 800ms, 500ms--><!--t, 800ms, 500ms-->bug-making <!--d, all, 800ms, 500ms--><!--l, infinite--><span class="pq-cursor"></span></span>developer;</p></div>
 		<div id="header-socials">
-				<a class="hover-scale" href="https://www.linkedin.com/in/vnphanquang" target="_blank"><img src="/images/socials/social-icon-linkedin.png" alt="linkedin"></a>
-				<a class="hover-scale" href="https://github.com/vnphanquang" target="_blank"><img src="/images/socials/social-icon-github.png" alt="github"></a>
-				<a class="hover-scale" href="https://www.facebook.com/vnphanquang" target="_blank"><img src="/images/socials/social-icon-facebook.png" alt="facebook"></a>
-				<a class="hover-scale" href="https://www.flickr.com/photos/134663221@N06" target="_blank"><img src="/images/socials/social-icon-flickr.png" alt="flickr"></a>
+				<a class="hover-scale" href="https://www.linkedin.com/in/vnphanquang" target="_blank"><img src="/images/socials/social-icon-linkedin.gif" alt="linkedin"></a>
+				<a class="hover-scale" href="https://github.com/vnphanquang" target="_blank"><img src="/images/socials/social-icon-github.gif" alt="github"></a>
+				<a class="hover-scale" href="https://www.facebook.com/vnphanquang" target="_blank"><img src="/images/socials/social-icon-facebook.gif" alt="facebook"></a>
+				<a class="hover-scale" href="https://www.flickr.com/photos/134663221@N06" target="_blank"><img src="/images/socials/social-icon-flickr.gif" alt="flickr"></a>
 		</div>
 	</header>
 
@@ -48,7 +58,7 @@
 
 				<div class="slide pq">
 					<div class="slide-left pq">
-						<p class="slide-title pq"><!--t, 2s, 1s--><strong>TYPING WEB ANIMATION</strong><!--d, all, 1s, 500ms--><!--t, 2s, 200ms-->PARAMETERIZED IN <span>HTML</span><!--d, all, 1s, 500ms--><!--t, 1.5s, 200ms-->STYLED WITH <span>CSS</span><!--d, all, 1s, 500ms--><!--t, 2s, 200ms-->INITIATED IN <span>Javascript</span><!--d, all, 0.75s, 500ms--><!--l, infinite--><span class="pq-cursor"></span></p>
+						<p class="slide-title pq"><!--t, 2s, 1s--><strong>TYPING WEB ANIMATION </strong><!--d, all, 1s, 500ms--><!--t, 2s, 200ms-->PARAMETERIZED IN <span>HTML </span><!--d, all, 1s, 500ms--><!--t, 1.5s, 200ms-->STYLED WITH <span>CSS </span><!--d, all, 1s, 500ms--><!--t, 2s, 200ms-->INITIATED IN <span>Javascript </span><!--d, all, 0.75s, 500ms--><!--l, infinite--><span class="pq-cursor"></span></p>
 						<div class="slide-content pq">
 							<p><img src="/images/projects/pq-features.svg" alt="pq-features">
 								Looking for a solution to your typing web animation? 
@@ -84,14 +94,14 @@
 									Multiclip does not interfere with Windows default clipboard. 
 								</p>
 							</div>
-							<a class="slide-more multiclip active-scale" href="https://github.com/vnphanquang/MultiClip_AutoIt/raw/master/MultiClip-ver1.1.rar">
-								DOWNLOAD PORTABLE
+							<a class="slide-more multiclip active-scale" href="https://github.com/vnphanquang/MultiClip_AutoIt">
+								SOURCE CODE
 							</a>
 					</div>
 					<div class="slide-right slide-image multiclip">
-						<a href="https://github.com/vnphanquang/MultiClip_AutoIt" class="active-scale" target="_blank">
+						<a href="https://github.com/vnphanquang/MultiClip_AutoIt/raw/master/MultiClip-ver1.1.rar" class="active-scale" target="_blank">
 							<img src="/images/projects/multiclip-demo.png" alt="multiclip-demo">
-							<p>See Source</p>
+							<p>DOWNLOAD PORTABLE</p>
 						</a>
 					</div>
 				</div>
@@ -109,12 +119,12 @@
 							</p>
 						</div>
 						<a class="slide-more" href="https://github.com/vnphanquang/farius.crossword" target="_blank">
-							GITHUB
+							SOURCE CODE
 						</a>
 					</div>
 
 					<div class="slide-right slide-image crossword">
-						<a href="https://github.com/vnphanquang/MultiClip_AutoIt" class="active-scale" target="_blank">
+						<a href="https://github.com/vnphanquang/farius.crossword" class="active-scale" target="_blank">
 							<img src="/images/projects/crossword-demo.png" alt="crossword-demo">
 						</a>
 					</div>
@@ -156,19 +166,19 @@
 
 					<div class="form-tab message">
 						<label for="message">Message&#42;:</label>
-						<textarea id="message" name="message" placeholder="Tell me your thoughts (required)..." rows="3" required="required"
+						<textarea data-gramm="false" id="message" name="message" placeholder="Tell me your thoughts (required)..." rows="3" required="required"
 						min-length="1"></textarea>
 					</div>
 
 					<div class="form-tab email">
 						<label for="email">Email: </label>
-						<input id="email" name="email" type="text" placeholder="Your email (not required)..."
+						<input data-gramm="false" id="email" name="email" type="text" placeholder="Your email (not required)..."
 						pattern=".+@.+\..+" >
 					</div>
 
 					<div class="form-tab name">
 						<label for="name">Name: </label>
-						<input id="name" name="name" type="text" placeholder="Your name (not required)...">
+						<input data-gramm="false" id="name" name="name" type="text" placeholder="Your name (not required)...">
 					</div>
 	
 				</div>

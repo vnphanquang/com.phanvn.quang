@@ -2,10 +2,6 @@
   font-family: "Audiowide";
   src: url("/fonts/Audiowide-Regular.ttf");
 }
-@font-face {
-  font-family: "QuangPhan";
-  src: url("/fonts/PhanQuangCalligraphr-Regular.otf");
-}
 
 @font-face {
   font-family: "Libre Barcode 128";
@@ -30,6 +26,8 @@ header {
   width: 100%;
   position: relative;
 }
+
+
 .active-scale:active {
   -webkit-transform-origin: center;
           transform-origin: center;
@@ -168,7 +166,6 @@ header > h1 {
   display: -ms-flexbox;
   display: flex;
   max-width: 700px;
-  /* width: 70vw; */
   -ms-flex-pack: distribute;
       justify-content: space-around;
   -ms-flex-line-pack: stretch;
@@ -440,7 +437,6 @@ header > h1 {
 }
 
 #contact-form {
-  /* position: relative; */
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
@@ -449,7 +445,6 @@ header > h1 {
   width: 600px;
   height: 245px;
   padding: 20px 30px;
-  /* background-color: #3b393a; */
   background-color: #212121;
   border: 0 none;
   border-radius: 3px;
@@ -579,11 +574,11 @@ header > h1 {
 /* ---------------------- GeoLocation ---------------------- */
 #geolocations {
   margin: 0 auto;
+  max-width: 1200px;
   width: 80%;
   padding: 10px 0;
 }
 #geolocations>img {
-  /* height: 200px; */
   width: 100%;
 }
 

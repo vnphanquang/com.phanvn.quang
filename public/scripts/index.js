@@ -1,33 +1,34 @@
 'use strict';
 
-document.addEventListener('DOMContentLoaded', function(e) {
-	var windowScrollTop;
+document.addEventListener('DOMContentLoaded', (e) => {
+	let windowScrollTop;
 	const nav = document.getElementsByTagName('nav')[0];
 	const navMain = document.getElementById('nav-main');
+	const navAvatar = document.getElementById('nav-avatar');
 	const header = document.getElementsByTagName('header')[0];
 	
 	const pqHero = document.getElementById('pq-hero');
 	const pqProject = document.querySelector('.slide-title.pq');
-	var sheet;
+	let sheet;
 	
-	var carouselBtns = document.getElementsByClassName('carousel-btns')[0].children;
-	var projectSlides = document.getElementsByClassName('slide');
-	var activeSlideIndex = 0;
+	const carouselBtns = document.getElementsByClassName('carousel-btns')[0].children;
+	const projectSlides = document.getElementsByClassName('slide');
+	let activeSlideIndex = 0;
 	
-	var contactForm = document.getElementById('contact-form');
+	const contactForm = document.getElementById('contact-form');
 
-	var mailBtn = document.querySelector('.letter-image');
-	var contactAgain = document.getElementById('contact-again');
+	const mailBtn = document.querySelector('.letter-image');
+	const contactAgain = document.getElementById('contact-again');
 	
-	var contactStepDots = document.getElementsByClassName('step-dot');
-	let contactBtns = document.getElementById('form-btns').children;
-	var contactPrevBtn = contactBtns[0];
-	var contactNextBtn = contactBtns[1];
-	var contactSubmitBtn = contactBtns[2];
-	var contactFormTabs = document.getElementsByClassName('form-tab');
-	var currentContactTab = 0;
+	const contactStepDots = document.getElementsByClassName('step-dot');
+	const contactBtns = document.getElementById('form-btns').children;
+	const contactPrevBtn = contactBtns[0];
+	const contactNextBtn = contactBtns[1];
+	const contactSubmitBtn = contactBtns[2];
+	const contactFormTabs = document.getElementsByClassName('form-tab');
+	let currentContactTab = 0;
 	
-	window.addEventListener('scroll', function(e) {
+	window.addEventListener('scroll', (e) => {
 		windowScrollTop = document.documentElement.scrollTop;
 		if (windowScrollTop > nav.offsetHeight) {
 			nav.classList.add('navScrolled');
@@ -39,6 +40,12 @@ document.addEventListener('DOMContentLoaded', function(e) {
 			navMain.classList.add('navShowed');
 		} else {
 			navMain.classList.remove('navShowed');
+		}
+
+		if (windowScrollTop + window.innerHeight == document.documentElement.scrollHeight) {
+			navAvatar.style.animation = 'none';
+			void navAvatar.offsetWidth;
+			navAvatar.style.animation = 'zoom-in-out 500ms cubic-bezier(.77,-0.89,.43,.8) 3';
 		}
 	});
 
@@ -68,11 +75,7 @@ document.addEventListener('DOMContentLoaded', function(e) {
 	contactForm.addEventListener('keyup', (e) => {
 		if (e.keyCode == 13) {
 			e.preventDefault();
-			if (currentContactTab != contactFormTabs.length - 1) {
-				contactNextBtn.click();
-			} else {
-				contactSubmitBtn.click();
-			}
+			contactNextAndFocus();
 		}
 	});
 
@@ -128,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function(e) {
 				return;
 			}
 		}
-	
+
 		let prevTab = contactFormTabs[currentContactTab];
 		prevTab.style.animation = 'slide-out-to-top 500ms cubic-bezier(.77,-0.89,.43,.8)';
 		window.setTimeout(() => {
@@ -147,9 +150,17 @@ document.addEventListener('DOMContentLoaded', function(e) {
 		contactFormTabs[currentContactTab].style.visibility = 'visible';
 		contactFormTabs[currentContactTab].style.animation = 'slide-in-from-bottom 500ms cubic-bezier(.48,.74,.48,.74)';
 		contactStepDots[currentContactTab].classList.add('active');
-		contactFormTabs[currentContactTab].children[1].focus();
 	}
-	
+
+	async function contactNextAndFocus() {
+		if (currentContactTab != contactFormTabs.length - 1) {
+			await nextContactTab();
+			contactFormTabs[currentContactTab].children[1].focus();
+		} else {
+			contactSubmitBtn.click();
+		}
+	}
+
 	async function prevContactTab() {
 		if (currentContactTab == 1) {
 			let emailInput = contactFormTabs[currentContactTab].children[1];
@@ -160,7 +171,7 @@ document.addEventListener('DOMContentLoaded', function(e) {
 				return;
 			}
 		}
-	
+
 		let prevTab = contactFormTabs[currentContactTab]
 		prevTab.style.animation = 'slide-out-to-bottom 500ms cubic-bezier(.77,-0.89,.43,.8)';
 		window.setTimeout(() => {
@@ -178,7 +189,6 @@ document.addEventListener('DOMContentLoaded', function(e) {
 		contactFormTabs[currentContactTab].style.visibility = 'visible';
 		contactFormTabs[currentContactTab].style.animation = 'slide-in-from-top 500ms cubic-bezier(.48,.74,.48,.74)';
 		contactStepDots[currentContactTab].classList.add('active');
-		contactFormTabs[currentContactTab].children[1].focus();
 	}
 	
 	function makeContactRequest() {
