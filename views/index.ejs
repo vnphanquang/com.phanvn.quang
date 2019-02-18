@@ -11,7 +11,7 @@
 	<link rel="shortcut icon" type="image/gif" href="/images/favicon.gif"/>
 	<link rel="stylesheet" type="text/css" href="/styles/index.css">
 
-	<script type="text/javascript" src="/scripts/lib/pq-typewriter.js"></script>
+	<script type="text/javascript" src="/scripts/lib/pq-typewriter.js" defer></script>
 	<script type="text/javascript" src="/scripts/index.js" defer></script>
 
 </head>
@@ -41,7 +41,6 @@
 		<div id="header-socials">
 				<a class="hover-scale" href="https://www.linkedin.com/in/vnphanquang" target="_blank"><img src="/images/socials/social-icon-linkedin.gif" alt="linkedin"></a>
 				<a class="hover-scale" href="https://github.com/vnphanquang" target="_blank"><img src="/images/socials/social-icon-github.gif" alt="github"></a>
-				<a class="hover-scale" href="https://www.facebook.com/vnphanquang" target="_blank"><img src="/images/socials/social-icon-facebook.gif" alt="facebook"></a>
 				<a class="hover-scale" href="https://www.flickr.com/photos/134663221@N06" target="_blank"><img src="/images/socials/social-icon-flickr.gif" alt="flickr"></a>
 		</div>
 	</header>
@@ -60,7 +59,7 @@
 					<div class="slide-left pq">
 						<p class="slide-title pq"><!--t, 2s, 1s--><strong>TYPING WEB ANIMATION </strong><!--d, all, 1s, 500ms--><!--t, 2s, 200ms-->PARAMETERIZED IN <span>HTML </span><!--d, all, 1s, 500ms--><!--t, 1.5s, 200ms-->STYLED WITH <span>CSS </span><!--d, all, 1s, 500ms--><!--t, 2s, 200ms-->INITIATED IN <span>Javascript </span><!--d, all, 0.75s, 500ms--><!--l, infinite--><span class="pq-cursor"></span></p>
 						<div class="slide-content pq">
-							<p><img src="/images/projects/pq-features.svg" alt="pq-features">
+							<p><img src="/images/projects/pq-checks.svg" alt="pq-features">
 								Looking for a solution to your typing web animation? 
 								I happened to over-👨‍🔬-engineer a JS library just for that. 
 								It ensures separation of concerns and 
@@ -157,9 +156,9 @@
 			
 			<form action="/quang/contact" id="contact-form" method="post" role="form" enctype="multipart/form-data">
 				<div id="step-dots">
-					<span class="step-dot active"></span>
-					<span class="step-dot"></span>
-					<span class="step-dot"></span>
+					<span class="step-dot hover-scale active"></span>
+					<span class="step-dot hover-scale"></span>
+					<span class="step-dot hover-scale"></span>
 				</div>
 
 				<div id="form-tabs">
@@ -183,10 +182,15 @@
 	
 				</div>
 
+				<p id="pq-processed"><!--t, 500ms-->Contact info is being processed...<span class="pq-cursor"></span></p>
+
 				<div id="form-btns">
 					<button class="form-previous hover-scale" type="button">Previous</button>
 					<button class="form-next hover-scale" type="button">Next</button>
 					<button class="form-submit hover-scale" type="submit">Submit</button>
+					<button class="form-exit hover-scale" type="button">
+						<img src="/images/contact-cross.gif" alt="exit cross">
+					</button>
 				</div>
 			</form>
 

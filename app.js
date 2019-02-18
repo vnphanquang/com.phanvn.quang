@@ -55,7 +55,7 @@ app.post('/quang/contact', upload.none(), (req, res) => {
    email = (email === '') ? '<Unspecified Email>' : email;
    let message = req.body.message;
    mailOpts = {
-      from: `Nodmailer Server <${process.env.DOMAIN_EMAIL}>`,
+      from: `Nodemailer Server <${process.env.DOMAIN_EMAIL}>`,
       to: process.env.GMAIL_USER,
       subject: 'New Contact Request',
       text: `${name} (${email}) says: ${message}`

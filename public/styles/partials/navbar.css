@@ -95,6 +95,7 @@ nav.navScrolled>#nav-quangphan>a {
 	left: 50%;
 	-webkit-transform: translateX(-50%);
 	transform: translateX(-50%);
+	cursor: pointer;
 }
 
 #nav-quangphan>p>span {
@@ -132,31 +133,33 @@ nav.navScrolled>#nav-quangphan>p>span:last-child {
 }
 
 
-#nav-quangphan .led-off {
+#nav-quangphan>p.flickered .led-off {
 	text-shadow: none;
 	opacity: .5;
 }
 
-#nav-quangphan>p>span:first-child>.led-flicker:first-child {
+#nav-quangphan>p.flickered>span:first-child>.led-flicker:first-child {
 	-webkit-animation: flicker-one 6s linear infinite;
 	        animation: flicker-one 6s linear infinite;
 }
-#nav-quangphan>p>span:first-child>.led-flicker:last-child {
+#nav-quangphan>p.flickered>span:first-child>.led-flicker:last-child {
 	-webkit-animation: flicker-one 10s linear infinite;
 	        animation: flicker-one 10s linear infinite;
 }
 
-#nav-quangphan>p>span:last-child>.led-flicker {
+#nav-quangphan>p.flickered>span:last-child>.led-flicker {
 	-webkit-animation: flicker-two 8s linear infinite;
 	        animation: flicker-two 8s linear infinite;
 }
 
-#nav-quangphan>p:hover *{
+#nav-quangphan>p:hover {
+	opacity: .75;
+}
+#nav-quangphan>p.flickered:hover *{
 	-webkit-animation: none !important;
 	        animation: none !important;
 	text-shadow: 0 0 100px #ffffff,0 0 40px #33ff33,0 0 3px #ffff4d;
-	opacity: .75;
-	cursor: default;
+	
 }
 
 #nav-ham {
@@ -215,7 +218,7 @@ nav.navScrolled>#nav-quangphan>p>span:last-child {
 	#nav-quangphan>p { display: none};	
 }
 
-@media only screen and (max-width: 840px) and (min-width: 675px) {
+/* @media only screen and (max-width: 840px) and (min-width: 675px) {
 	#nav-links {
 		display: table;
 		width: 50%;
@@ -254,7 +257,7 @@ nav.navScrolled>#nav-quangphan>p>span:last-child {
 		transition: transform 200ms ease-in;
 		transition: transform 200ms ease-in, -webkit-transform 200ms ease-in;
 	}
-}
+} */
 
 @media only screen and (max-width: 675px) {
 	#nav-main {
