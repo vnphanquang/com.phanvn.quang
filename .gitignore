@@ -17,3 +17,6 @@ node_modules/
 
 # Contact Request Failure Log
 contact-failure-log.txt
+
+# Forever Logs
+forever-quang-log
