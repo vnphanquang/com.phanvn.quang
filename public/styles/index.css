@@ -93,10 +93,6 @@ header {
   -webkit-animation: social-slide-in 1s ease .75s forwards;
           animation: social-slide-in 1s ease .75s forwards;
 }
-#header-socials>a:nth-of-type(3) {
-  -webkit-animation: social-slide-in 1s ease 1s forwards;
-          animation: social-slide-in 1s ease 1s forwards;
-}
 
 header>img {
   max-width: 100%;

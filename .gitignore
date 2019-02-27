@@ -1,22 +1,29 @@
-# Eclipse IDE
-/.project
-.settings/
-
 # Ohter Projects and Miscellaneous
 gitignore/
-
-# VS Code IDE
-.vscode
-.vs
-
-# Node
-node_modules/
-
-# ENVIRONMENT_VARIABLES
-.env
 
 # Contact Request Failure Log
 contact-failure-log.txt
 
 # Forever Logs
 forever-quang-log
+
+# Local Development
+
+# local app.js
+app-local.js
+
+## ENVIRONMENT_VARIABLES
+.env
+
+## Eclipse IDE
+/.project
+.settings/
+
+## VS Code IDE
+.vscode
+.vs
+
+## Node
+node_modules/
+
+
