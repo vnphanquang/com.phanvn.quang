@@ -17,7 +17,6 @@
     "dotenv": "^6.2.0",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
-    "express-subdomain": "^1.0.5",
     "multer": "^1.4.1",
     "nodemailer": "^5.1.1"
   },

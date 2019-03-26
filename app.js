@@ -29,8 +29,12 @@ const nodemailer = require('nodemailer');
 
 //---------------------- Quang Subdomain ----------------------
 //Index Request GET
-app.get('/quang/index.html.var', (req, res) => {
+app.get('/quang', (req, res) => {
    res.render('index');
+});
+
+app.get('*', (req, res) => {
+   res.redirect('/quang');
 });
 
 //Contact Request POST
@@ -38,12 +42,12 @@ app.post('/quang/contact', upload.none(), (req, res) => {
 
    let mailOpts, smtpTrans;
    smtpTrans = nodemailer.createTransport({
-      host: 'a2plcpnl0387.prod.iad2.secureserver.net',
+      host: 'smtp.gmail.com',
       port: 465,
       secure: true, //use SSL
       auth: {
-         user: process.env.DOMAIN_EMAIL,
-         pass: process.env.DOMAIN_EMAIL_PASS
+         user: process.env.GMAIL_USER,
+         pass: process.env.GMAIL_PASS
       },
       tls: {
           rejectUnauthorized: false
@@ -84,30 +88,12 @@ app.post('/quang/contact', upload.none(), (req, res) => {
 
 });
  
-//---------------------- General Routing ----------------------
-
-// app.get('/', (req, res) => {
-//    res.redirect(302, '/quang/');
-// });
-
-// app.get('*', (req, res) => {
-//    console.log("*all Request");
-//    console.log('DIR: ' + path.join(__dirname, 'public'));
-//    console.log('PATH: ' +req.path);
-//    console.log('ORIGINAL URL: ' + req.originalUrl);
-//    console.log('HOST NAME: ' + req.hostname);
-//    console.log('SUBDOMAINS: ' + req.subdomains);
-//    // console.log(req);
-//    console.log('-----------------------------');
-//    res.status(200).send('testing');
-// });
 
 //---------------------- Server Initiation ----------------------
-const http = require('http');
-const hostname = '127.0.0.1';
-const port = 3000;
+// const hostname = '127.0.0.1';
+const PORT = process.env.PORT || 5000;
 
-// localhost server
-app.listen(port, hostname, () => {
-   console.log(`Server running at http://${hostname}:${port}/ ...`);
+//localhost server
+app.listen(PORT, () => {
+  console.log(`Express server running at port: ${PORT} ...`);
 });
