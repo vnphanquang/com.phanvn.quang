@@ -26,4 +26,7 @@ app-local.js
 ## Node
 node_modules/
 
+npm-debug.log
+.DS_Store
+
 

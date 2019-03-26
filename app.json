@@ -1,0 +1,7 @@
+{
+  "name": "FoodCorp",
+  "description": "Quang Phan's personal website",
+  "repository": "https://github.com/vnphanquang/com.phanvn.quang",
+  "keywords": ["node", "express", "heroku", "static", "portfolio"],
+  "website": "http://www.onemealatime.com"
+}
