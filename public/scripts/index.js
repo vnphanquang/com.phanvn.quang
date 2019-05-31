@@ -282,7 +282,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
 			}
 		};
 
-		xhr.open('POST', '/quang/contact', true);
+		xhr.open('POST', '/contact', true);
 		xhr.send(new FormData(contactForm));
 	}
 
