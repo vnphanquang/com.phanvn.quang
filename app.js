@@ -29,16 +29,12 @@ const nodemailer = require('nodemailer');
 
 //---------------------- Quang Subdomain ----------------------
 //Index Request GET
-app.get('/quang', (req, res) => {
+app.get('/', (req, res) => {
    res.render('index');
 });
 
-app.get('*', (req, res) => {
-   res.redirect('/quang');
-});
-
 //Contact Request POST
-app.post('/quang/contact', upload.none(), (req, res) => {
+app.post('/contact', upload.none(), (req, res) => {
 
    let mailOpts, smtpTrans;
    smtpTrans = nodemailer.createTransport({
