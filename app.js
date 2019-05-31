@@ -50,7 +50,7 @@ app.post('/quang/contact', upload.none(), (req, res) => {
          pass: process.env.GMAIL_PASS
       },
       tls: {
-          rejectUnauthorized: false
+         rejectUnauthorized: false
       }
    });
    let name = req.body.name;
@@ -73,10 +73,10 @@ app.post('/quang/contact', upload.none(), (req, res) => {
          ----------------------------------------------------\n`;
          fs.appendFile('contact-failure-log.txt', toFileStr, (error) => {
             if (error) {
-                console.log("Failed to update contact-failure-log.txt");
+               console.log("Failed to update contact-failure-log.txt");
             }
             else {
-                console.log(`Contact form request: failure at ${date}\nUpdated contact-failure-log.txt`);
+               console.log(`Contact form request: failure at ${date}\nUpdated contact-failure-log.txt`);
             }
          });
          res.status(200).send();
@@ -87,7 +87,7 @@ app.post('/quang/contact', upload.none(), (req, res) => {
    });
 
 });
- 
+
 
 //---------------------- Server Initiation ----------------------
 // const hostname = '127.0.0.1';
@@ -95,5 +95,5 @@ const PORT = process.env.PORT || 5000;
 
 //localhost server
 app.listen(PORT, () => {
-  console.log(`Express server running at port: ${PORT} ...`);
+console.log(`Express server running at port: ${PORT} ...`);
 });
